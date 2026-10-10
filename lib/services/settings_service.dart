@@ -63,7 +63,7 @@ class WordSearchSettings extends ChangeNotifier {
   int gamesPlayed = 0;
   int wins = 0;
   List<int> bestTimes = [0, 0, 0]; // fastest relaxed seconds per tier
-  bool isPro = false;
+  bool isPro = true; // everything unlocked — no Pro version
 
   String get playerName => playerNames.isEmpty ? defaultNames[0] : playerNames[0];
 
@@ -136,7 +136,7 @@ class WordSearchSettings extends ChangeNotifier {
         }
       } catch (_) {}
     }
-    isPro = p.getBool(_kIsPro) ?? false;
+    isPro = true; // everything unlocked
     for (final k in _defaultCustomColors.keys) {
       customColors[k] = p.getInt('$_kCustomPrefix$k') ?? _defaultCustomColors[k]!;
     }

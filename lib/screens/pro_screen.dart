@@ -171,7 +171,6 @@ class _ProScreenState extends State<ProScreen> {
   }
 
   Widget _buyCard(WorkshopThemeDef t, StoreService store) {
-    final p = store.proProduct;
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(

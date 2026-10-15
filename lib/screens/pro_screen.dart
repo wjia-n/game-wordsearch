@@ -206,24 +206,12 @@ class _ProScreenState extends State<ProScreen> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 14),
-          if (p != null)
-            Workshop.woodButton(
-              theme: t,
-              label: 'GET PRO · ${p.price}',
-              icon: Icons.lock_open,
-              fontSize: 17,
-              onTap: store.purchaseInProgress.value
-                  ? null
-                  : () => store.buyPro(),
-            )
-          else
-            Text(
-              'PRO purchase appears here once the product is set up '
-              'in Play Console.',
-              style: Workshop.body(13,
-                  theme: t, color: t.ink.withValues(alpha: 0.7)),
-              textAlign: TextAlign.center,
-            ),
+          Text(
+            'Everything is unlocked \u2014 all difficulties, modes, hints, themes and tile styles are free forever.',
+            style: Workshop.body(13,
+                theme: t, color: t.ink.withValues(alpha: 0.7)),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import '../services/audio_service.dart';
 import '../services/settings_service.dart';
 import '../theme/wordsearch_themes.dart';
 import '../theme/workshop.dart';
+import '../transfer/transfer_ui.dart';
 
 /// Settings: music/SFX toggles, volume, stats.
 class SettingsScreen extends StatelessWidget {
@@ -44,6 +45,7 @@ class SettingsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              TransferSaveTile(gameSlug: 'wordsearch'),
               Workshop.sectionTitle('Sound', theme: t),
               _switchRow(
                 t,

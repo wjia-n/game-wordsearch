@@ -1,5 +1,6 @@
 import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../engine/wordsearch_engine.dart';
 import '../services/audio_service.dart';
@@ -292,9 +293,9 @@ class _MenuScreenState extends State<MenuScreen> {
                   Expanded(
                     child: _choiceChip(
                       label: 'Timed',
-                      sub: _s.isPro
+                      sub: defaultTargetPlatform == TargetPlatform.iOS ? '⭐ Gold Star' : (_s.isPro
                           ? 'Beat the clock!'
-                          : 'PRO only',
+                          : 'PRO only'),
                       selected: _s.mode == 1,
                       locked: !_s.isPro,
                       onTap: () {
@@ -421,9 +422,9 @@ class _MenuScreenState extends State<MenuScreen> {
                 label: Text(
                   _s.themeId == 'custom'
                       ? 'Custom theme: My Creation'
-                      : _s.isPro
+                      : defaultTargetPlatform == TargetPlatform.iOS ? '⭐ Gold Star' : (_s.isPro
                           ? 'Design my own theme'
-                          : 'Custom theme (PRO)',
+                          : 'Custom theme (PRO)'),
                   style: Workshop.body(14, theme: t),
                 ),
                 style: OutlinedButton.styleFrom(
@@ -475,7 +476,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   Workshop.woodIconButton(
                     theme: t,
                     icon: Icons.workspace_premium,
-                    tooltip: 'Word Search PRO',
+                    tooltip: defaultTargetPlatform == TargetPlatform.iOS ? '⭐ Gold Star' : 'Word Search PRO',
                     onTap: _openPro,
                   ),
                   const SizedBox(width: 14),
